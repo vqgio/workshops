@@ -6,6 +6,7 @@ public class MortgageCalc {
 
         Scanner scanner = new Scanner(System.in);
 
+        //nextDouble allows me to read the value of the user that can be decimals
         System.out.print("Enter the principal loan amount : ");
         double principal = scanner.nextDouble();
 
@@ -17,6 +18,7 @@ public class MortgageCalc {
         int totalPayments = loanYears * 12;
         double monthlyRate = annualRate / 100 / 12;
 
+        //used fractions in order to calculate loan monthly payment
         double numerator = monthlyRate * Math.pow(1 + monthlyRate, totalPayments);
         double denominator = Math.pow(1 + monthlyRate, totalPayments) - 1;
         double monthlyPayment = principal * (numerator / denominator);
