@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class DealershipFileManager {
     private final String fileName;
-    //This will read csv file without me specifying path bc using relative path, as long as its stored in the java app
+    //we get filename from private init in UI class
 
     public DealershipFileManager(String fileName) {
         this.fileName = fileName;
