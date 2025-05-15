@@ -1,6 +1,7 @@
 package com.pluralsight;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Dealership {
     private final ArrayList<Vehicle> inventory;
@@ -67,20 +68,20 @@ public class Dealership {
         return results;
     }
 
-    public ArrayList<Vehicle> getVehiclesByColor(String color) {
+    public ArrayList<Vehicle> getVehiclesByMileage(int min, int max) {
         ArrayList<Vehicle> results = new ArrayList<>();
         for (Vehicle v : inventory) {
-            if (v.getColor().equalsIgnoreCase(color)) {
+            if (v.getOdometer() >= min && v.getOdometer() <= max) {
                 results.add(v);
             }
         }
         return results;
     }
 
-    public ArrayList<Vehicle> getVehiclesByMileage(int min, int max) {
+    public ArrayList<Vehicle> getVehiclesByColor(String color) {
         ArrayList<Vehicle> results = new ArrayList<>();
         for (Vehicle v : inventory) {
-            if (v.getOdometer() >= min && v.getOdometer() <= max) {
+            if (v.getColor().equalsIgnoreCase(color)) {
                 results.add(v);
             }
         }

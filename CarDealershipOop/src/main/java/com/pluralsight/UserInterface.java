@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class UserInterface {
     private final Scanner scanner;
     private Dealership dealership;
-    private DealershipFileManager dfm;
+    private DealershipFileManager dealershipFm;
 
     public UserInterface() {
         this.scanner = new Scanner(System.in);
@@ -35,8 +35,8 @@ public class UserInterface {
     }
 
     private void init() {
-        dfm = new DealershipFileManager("inventory.csv");
-        dealership = dfm.getDealership();
+        dealershipFm = new DealershipFileManager("inventory.csv");
+        dealership = dealershipFm.getDealership();
     }
 
     private void showMenu() {
@@ -144,7 +144,7 @@ public class UserInterface {
 
         Vehicle v = new Vehicle(vin, year, make, model, vehicleType, color, odometer, price);
         dealership.addVehicle(v);
-        dfm.saveDealership(dealership);
+        dealershipFm.saveDealership(dealership);
         System.out.println("Vehicle added.\n");
     }
 
@@ -161,7 +161,7 @@ public class UserInterface {
             System.out.println("VIN not found.\n");
         } else {
             dealership.removeVehicle(target);
-            dfm.saveDealership(dealership);
+            dealershipFm.saveDealership(dealership);
             System.out.println("Vehicle removed.\n");
         }
     }
