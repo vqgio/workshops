@@ -1,87 +1,91 @@
 package com.pluralsight;
 
 public class Vehicle {
-    int vehicleId;
-    int modelYear;
-    String carMake;
-    String carModel;
-    String carType;
-    String color;
-    int mileage;
-    double price;
+    private final int vin;
+    private int year;
+    private String make;
+    private String model;
+    private String vehicleType;   // car, truck, suv, van
+    private String color;
+    private int odometer;
+    private double price;
 
-    public Vehicle(int vehicleId, int modelYear, String carMake, String carModel, String color, String carType, int mileage, double price) {
-        this.vehicleId = vehicleId;
-        this.modelYear = modelYear;
-        this.carMake = carMake;
-        this.carModel = carModel;
+    public Vehicle(int vin, int year, String make, String model, String vehicleType, String color, int odometer, double price) {
+        this.vin = vin;
+        this.year = year;
+        this.make = make;
+        this.model = model;
+        this.vehicleType = vehicleType;
         this.color = color;
-        this.carType = carType;
-        this.mileage = mileage;
+        this.odometer = odometer;
         this.price = price;
     }
-
-    public int getVehicleId() {
-        return vehicleId;
+    public int getVin() {
+        return vin;
     }
 
-    public void setVehicleId(int vehicleId) {
-        this.vehicleId = vehicleId;
+    public int getYear() {
+        return year;
     }
 
-    public int getModelYear() {
-        return modelYear;
+    public void setYear(int y) {
+        year = y;
     }
 
-    public void setModelYear(int modelYear) {
-        this.modelYear = modelYear;
+    public String getMake() {
+        return make;
     }
 
-    public String getCarMake() {
-        return carMake;
+    public void setMake(String m) {
+        make = m;
     }
 
-    public void setCarMake(String carMake) {
-        this.carMake = carMake;
+    public String getModel() {
+        return model;
     }
 
-    public String getCarModel() {
-        return carModel;
+    public void setModel(String m) {
+        model = m;
     }
 
-    public void setCarModel(String carModel) {
-        this.carModel = carModel;
+    public String getVehicleType() {
+        return vehicleType;
     }
 
-    public String getCarType() {
-        return carType;
-    }
-
-    public void setCarType(String carType) {
-        this.carType = carType;
+    public void setVehicleType(String t) {
+        vehicleType = t;
     }
 
     public String getColor() {
         return color;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public void setColor(String c) {
+        color = c;
     }
 
-    public int getMileage() {
-        return mileage;
+    public int getOdometer() {
+        return odometer;
     }
 
-    public void setMileage(int mileage) {
-        this.mileage = mileage;
+    public void setOdometer(int o) {
+        odometer = o;
     }
 
     public double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setPrice(double p) {
+        price = p;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%5d | %-4d | %-10s | %-10s | %-5s | %-6s | %7d | $%,8.2f",
+                vin, year, make, model, vehicleType, color, odometer, price);
+    }
+    public String toFileString() {
+        return vin + "|" + year + "|" + make + "|" + model + "|" + vehicleType + "|" + color + "|" + odometer + "|" + price;
     }
 }
