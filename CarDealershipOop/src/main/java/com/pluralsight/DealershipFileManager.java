@@ -13,7 +13,7 @@ public class DealershipFileManager {
     public Dealership getDealership() {
         try (Scanner scanner = new Scanner(new File(fileName))) {
             if (!scanner.hasNextLine()) {
-                throw new IllegalStateException("Empty file");
+                throw new IllegalStateException("Empty file, nothing to read");
             }
             String[] info = scanner.nextLine().split("\\|");
             Dealership dealer = new Dealership(info[0], info[1], info[2]);
@@ -22,11 +22,7 @@ public class DealershipFileManager {
                 if (parts.length < 8) {
                     continue;
                 }
-                Vehicle v = new Vehicle(Integer.parseInt(parts[0]),
-                        Integer.parseInt(parts[1]),
-                        parts[2], parts[3], parts[4], parts[5],
-                        Integer.parseInt(parts[6]),
-                        Double.parseDouble(parts[7]));
+                Vehicle v = new Vehicle(Integer.parseInt(parts[0]), Integer.parseInt(parts[1]), parts[2], parts[3], parts[4], parts[5], Integer.parseInt(parts[6]), Double.parseDouble(parts[7]));
                 dealer.addVehicle(v);
             }
             return dealer;

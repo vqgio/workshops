@@ -82,8 +82,7 @@ public class Vehicle {
 
     @Override
     public String toString() {
-        return String.format("%5d | %-4d | %-10s | %-10s | %-5s | %-6s | %7d | $%,8.2f",
-                vin, year, make, model, vehicleType, color, odometer, price);
+        return String.format("%5d | %-4d | %-10s | %-10s | %-5s | %-6s | %7d | $%,8.2f", vin, year, make, model, vehicleType, color, odometer, price);
     }
     public String toFileString() {
         return vin + "|" + year + "|" + make + "|" + model + "|" + vehicleType + "|" + color + "|" + odometer + "|" + price;
