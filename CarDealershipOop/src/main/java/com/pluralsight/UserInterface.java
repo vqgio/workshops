@@ -35,7 +35,7 @@ public class UserInterface {
     }
 
     private void init() {
-        dealershipFm = new DealershipFileManager("inventory.csv");
+        dealershipFm = new DealershipFileManager("C:\\Users\\rsant\\pluralsight\\workshops\\CarDealershipOop\\src\\main\\resources\\inventory.csv");
         dealership = dealershipFm.getDealership();
     }
 
