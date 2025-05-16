@@ -9,10 +9,11 @@ public class LeaseContract extends Contract {
     }
     //private double mon
 
-
+    @Override
     public double getMonthlyPayment() {
         return 0;
     }
+    @Override
     public double getTotalPrice() {
         return 0;
     }
